@@ -5,17 +5,15 @@
   <title>Redirecting…</title>
   <script>
     function go() {
-      // Lấy path sau domain, bỏ dấu "/" đầu và cuối
       const raw = location.pathname.replace(/^\/|\/$/g, "");
       if (!raw) {
         document.body.innerHTML = "<h2>Provide a document slug</h2>";
         return;
       }
-      // Nếu cần mapping folder khác, sửa basePath bên dưới
       const basePath = "/business_requirements/by_tickets/";
       const target = "https://dev.azure.com/25fittech/25FIT/_git/documents"
         + "?path=" + encodeURIComponent(basePath + raw + ".md");
-      location.replace(target); // 301-like redirect
+      location.replace(target);
     }
     window.addEventListener("DOMContentLoaded", go);
   </script>
