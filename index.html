@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://dev.azure.com/25fittech/25FIT/_git/documents">
   <title>Redirecting...</title>
+  <script>
+    window.onload = function () {
+      // Lấy đường dẫn sau domain, ví dụ: /BookingSchedule_v.2025.10.06
+      const path = window.location.pathname.replace('/', '');
+      
+      if (path) {
+        // Ghép vào URL Azure DevOps
+        const target = `https://dev.azure.com/25fittech/25FIT/_git/documents?path=/business_requirements/by_tickets/${path}.md`;
+        window.location.href = target;
+      } else {
+        // Nếu không có path thì cho về trang mặc định
+        document.body.innerHTML = "<h2>No file specified</h2>";
+      }
+    }
+  </script>
 </head>
 <body>
-  <p>Redirecting to 
-    <a href="https://dev.azure.com/25fittech/25FIT/_git/documents">Azure Dev</a>...
-  </p>
+  <p>Redirecting...</p>
 </body>
 </html>
