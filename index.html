@@ -14,7 +14,7 @@
       // Nếu cần mapping folder khác, sửa basePath bên dưới
       const basePath = "/business_requirements/by_tickets/";
       const target = "https://dev.azure.com/25fittech/25FIT/_git/documents"
-        + "?path=" + encodeURIComponent(basePath + raw + ".md");
+        + "?path=" + encodeURIComponent(basePath + raw + ".md") + "&_a=preview";
       location.replace(target); // 301-like redirect
     }
     window.addEventListener("DOMContentLoaded", go);
