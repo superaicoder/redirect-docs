@@ -8,7 +8,8 @@
       // Lấy path sau domain, bỏ dấu "/" đầu và cuối
       const raw = location.pathname.replace(/^\/|\/$/g, "");
       if (!raw) {
-        document.body.innerHTML = "<h2>Provide a document slug</h2>";
+        // Nếu không có slug, dẫn trực tiếp đến trang documents
+        location.replace("https://dev.azure.com/25fittech/25FIT/_git/documents");
         return;
       }
       // Nếu cần mapping folder khác, sửa basePath bên dưới
